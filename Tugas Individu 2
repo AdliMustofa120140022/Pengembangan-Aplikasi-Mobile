@@ -66,7 +66,10 @@ function third() {
 
 first();
 //Event Loop
-
+while (queue.waitForMessage()) {
+    queue.processNextMessage();
+  }
+  
 //Callbacks
 function nama() {
     console.log('Adli Mustofa')
