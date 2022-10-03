@@ -1,1 +1,90 @@
+//losure
+function mobil() {
+    var merk = "Honda";
+    return function() {
+        return merk + "Jazz";
+    }
+}
+console.dir(mobil());
 
+//funcion expression
+(function () {
+    console.log('Honda Jazz')
+})()
+
+//First-class function
+function kali(x, y) {
+    return x * y
+}
+
+let hasil = kali
+let tampilkan = hasil(4, 6)
+console.log(tampilkan) 
+
+//Higher-order function
+let nilai = [
+    {nama : 'Adli', mutu : 'A'},
+    {nama : 'Risky', mutu : 'B'},
+    {nama : 'Hanip', mutu : 'A'},
+]
+
+nilai = nilai.filter(nilai => nilai.mutu == 'A')
+console.log(nilai.map(nilai => nilai.nama)) 
+//Execution Context
+var nama = "Adli Mustofa Fahri" //inisiasi variabel nama
+var username = "0xft1h" // inisiasi variabel username
+
+//menambahkan argumen username pada function
+function cetakURL(username) {
+  //inisiasi variabel saweriaURL
+  var saweriaURL = "https://saweria.co/"
+  /* mengembalikan saweriaURL dan menambahkannya dengan variabel username */
+  return saweriaURL + username
+}
+
+/* memanggil function cetakURL dan mengisi argumennya dengan variabel username */
+console.log(cetakURL(username))
+//Execution Stack
+var name = "Victor";
+
+function first() {
+  var a = "Hi!";
+  second();
+  console.log(`${a} ${name}`);
+}
+
+function second() {
+  var b = "Hey!";
+  third();
+  console.log(`${b} ${name}`);
+}
+
+function third() {
+  var c = "Hello!";
+  console.log(`${c} ${name}`);
+}
+
+first();
+//Event Loop
+
+//Callbacks
+function nama() {
+    console.log('Adli Mustofa')
+}
+
+function salam(callback) {
+    console.log('Nama Saya')
+    callback()
+}
+
+salam(nama)
+
+//Promises dan Async/Await
+let promise = new Promise(function(resolve, reject) {
+}); 
+
+async function f() {
+    return 1;
+} 
+
+let value = await promise;
